@@ -1,0 +1,154 @@
+/* Theme 6: Glassmorphism Effect - Blurred background with glass-style containers */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-color: #3a86ff;
+  --secondary-color: #8ecae6;
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --border-color: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #8ecae6, #3a86ff);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background shapes */
+body::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #3a86ff, #8ecae6);
+  top: -100px;
+  right: -100px;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8ecae6, #3a86ff);
+  bottom: -100px;
+  left: -100px;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: white;
+  font-size: 0.9rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.submit-btn:hover {
+  background: white;
+  color: var(--primary-color);
+}
+
+/* Glass reflection effect */
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: -1;
+  border-radius: 15px;
+}
+

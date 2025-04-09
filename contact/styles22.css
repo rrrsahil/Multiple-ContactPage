@@ -1,0 +1,146 @@
+/* Theme 22: Handwritten Style - Notebook paper background, handwriting fonts */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&display=swap");
+
+:root {
+  --primary-color: #3b5998;
+  --secondary-color: #8b9dc3;
+  --bg-color: #f7f7f7;
+  --text-color: #333;
+  --border-color: #ddd;
+  --paper-color: #fff;
+  --line-color: #a9c4eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Indie Flower", cursive;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: var(--paper-color);
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  position: relative;
+  background-image: linear-gradient(var(--paper-color) 0px, var(--paper-color) 24px, var(--line-color) 25px);
+  background-size: 100% 25px;
+}
+
+/* Notebook binding */
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  height: 100%;
+  width: 2px;
+  background-color: #ff5252;
+}
+
+/* Notebook holes */
+.form-container::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333;
+  box-shadow: 0 50px 0 #333, 0 100px 0 #333, 0 150px 0 #333, 0 200px 0 #333, 0 250px 0 #333, 0 300px 0 #333, 0 350px 0
+    #333, 0 400px 0 #333;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 36px;
+  transform: rotate(-2deg);
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-family: "Caveat", cursive;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px dashed var(--secondary-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-size: 18px;
+  font-family: "Indie Flower", cursive;
+  line-height: 1.5;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.submit-btn {
+  background-color: var(--paper-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  width: auto;
+  font-size: 18px;
+  font-family: "Caveat", cursive;
+  display: block;
+  margin: 0 auto;
+  transform: rotate(-2deg);
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--paper-color);
+  transform: rotate(0deg);
+}
+
+/* Doodle elements */
+.form-container::before {
+  content: "✎";
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  color: var(--primary-color);
+}

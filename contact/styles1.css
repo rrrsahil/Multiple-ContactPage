@@ -1,0 +1,145 @@
+/* Theme 1: Techie Matrix - Matrix-inspired theme with green text on black */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #00ff00;
+  --secondary-color: #003300;
+  --bg-color: #000000;
+  --text-color: #00ff00;
+  --border-color: #00ff00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.form-container {
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 0 10px var(--primary-color);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 10px var(--primary-color); }
+  to { box-shadow: 0 0 20px var(--primary-color); }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+h1::after {
+  content: "_";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-family: 'Source Code Pro', monospace;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.submit-btn {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+/* Matrix-like falling characters animation */
+.container::after {
+  content: "01010101010101010101";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
+  color: rgba(0, 255, 0, 0.2);
+  pointer-events: none;
+  animation: fall 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}

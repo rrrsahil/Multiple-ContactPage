@@ -1,0 +1,180 @@
+/* Theme 5: Colorful Cards - Cards layout for address, phone, email */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --card1-color: #ff6b6b;
+  --card2-color: #48dbfb;
+  --card3-color: #1dd1a1;
+  --card4-color: #feca57;
+  --card5-color: #5f27cd;
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --border-color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.form-group:nth-child(2) {
+  background-color: rgba(255, 107, 107, 0.1);
+  border-left: 5px solid var(--card1-color);
+}
+
+.form-group:nth-child(3) {
+  background-color: rgba(72, 219, 251, 0.1);
+  border-left: 5px solid var(--card2-color);
+}
+
+.form-group:nth-child(4) {
+  background-color: rgba(29, 209, 161, 0.1);
+  border-left: 5px solid var(--card3-color);
+}
+
+.form-group:nth-child(5) {
+  background-color: rgba(254, 202, 87, 0.1);
+  border-left: 5px solid var(--card4-color);
+}
+
+.form-group:nth-child(6) {
+  background-color: rgba(95, 39, 205, 0.1);
+  border-left: 5px solid var(--card5-color);
+}
+
+.form-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.form-group:nth-child(2) label {
+  color: var(--card1-color);
+}
+
+.form-group:nth-child(3) label {
+  color: var(--card2-color);
+}
+
+.form-group:nth-child(4) label {
+  color: var(--card3-color);
+}
+
+.form-group:nth-child(5) label {
+  color: var(--card4-color);
+}
+
+.form-group:nth-child(6) label {
+  color: var(--card5-color);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-size: 16px;
+  background-color: white;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+.form-group:nth-child(2) input:focus {
+  border-color: var(--card1-color);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.form-group:nth-child(3) input:focus {
+  border-color: var(--card2-color);
+  box-shadow: 0 0 0 3px rgba(72, 219, 251, 0.2);
+}
+
+.form-group:nth-child(4) input:focus {
+  border-color: var(--card3-color);
+  box-shadow: 0 0 0 3px rgba(29, 209, 161, 0.2);
+}
+
+.form-group:nth-child(5) input:focus {
+  border-color: var(--card4-color);
+  box-shadow: 0 0 0 3px rgba(254, 202, 87, 0.2);
+}
+
+.form-group:nth-child(6) textarea:focus {
+  border-color: var(--card5-color);
+  box-shadow: 0 0 0 3px rgba(95, 39, 205, 0.2);
+}
+
+.form-group:last-child {
+  background-color: transparent;
+  border-left: none;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #ff6b6b, #5f27cd);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(95, 39, 205, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(95, 39, 205, 0.4);
+}

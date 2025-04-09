@@ -1,0 +1,170 @@
+/* Theme 4: Bubble Pop - Sky blue and white theme, circular UI elements */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #5dade2;
+  --bg-color: #e8f4fc;
+  --text-color: #2c3e50;
+  --border-color: #a9cce3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bubble animation */
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.4));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.4));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  bottom: 15%;
+  right: 15%;
+  animation: float 10s ease-in-out infinite;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.4));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 30%;
+  animation: float 6s ease-in-out infinite;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.4));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+  padding: 40px;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  position: relative;
+}
+
+h1::after {
+  content: "○";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 5px rgba(52, 152, 219, 0.2);
+}
+
+textarea {
+  border-radius: 20px;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--secondary-color);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
