@@ -41,7 +41,7 @@ How to Use:
 
 1. Clone or download the repository:
 
-   git clone https://github.com/rrrsahil/contact-page-styles.git
+   git clone https://github.com/rrrsahil
 
 2. Open index.html in your browser.
 
